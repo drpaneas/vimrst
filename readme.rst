@@ -39,7 +39,7 @@ in very simple way.
 
 .. code-block:: bash
 
-   git clone https://github.com/drpaneas/vimrst.git ~
+   git clone https://github.com/drpaneas/vimrst.git
    cd vimrst
    cp .vimrc $HOME
    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
