@@ -27,7 +27,7 @@ Download my configuration
 I use Vundle as the tool that helps me to install all the plugins I need
 in very simple way.
 
- 1. Requirements
+1. Requirements
   
 .. code-block:: bash
 
@@ -35,7 +35,16 @@ in very simple way.
    sudo pip install https://github.com/Rykka/instant-rst.py/archive/master.zip
 
 
-2 . Installation
+2. Installation
+   
+   2.1 Automatic installation
+
+   Just copy and paste the following command in your terminal
+   and it will do all the work for you. Just make sure you have
+   installed all the requirements from above.
+
+   Type: ``curl http://bit.ly/1DCKEn6 -L -o - | sh``
+
 
 ..  code-block:: bash
 
