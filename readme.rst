@@ -27,11 +27,11 @@ Download my configuration
 I use Vundle as the tool that helps me to install all the plugins I need
 in very simple way.
 
-1. Requirements
+ 1. Requirements
 
-.. code-block:: bash
+. . code-block:: bash
 
-   zypper install  python-devel curl
+   zypper install python-devel curl git
    sudo pip install https://github.com/Rykka/instant-rst.py/archive/master.zip
 
 
