@@ -28,16 +28,16 @@ I use Vundle as the tool that helps me to install all the plugins I need
 in very simple way.
 
  1. Requirements
-
-. . code-block:: bash
+  
+.. code-block:: bash
 
    zypper install python-devel curl git
    sudo pip install https://github.com/Rykka/instant-rst.py/archive/master.zip
 
 
-2. Installation
+2 . Installation
 
-.. code-block:: bash
+..  code-block:: bash
 
    git clone https://github.com/drpaneas/vimrst.git
    cd vimrst
