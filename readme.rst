@@ -32,6 +32,8 @@ in very simple way.
 .. code-block:: bash
 
    git clone https://github.com/drpaneas/vimrst.git ~
+   cd vimrst
+   cp -r .vim $HOME && cp .vimrc $HOME
 
 2. Download the following
 
@@ -49,6 +51,7 @@ Once you've finished, terminate server preview using ``:StopInstantRst!``.
 
 Example
 ~~~~~~~
+0. Go to the folder of the project: ``cd vimrst``
 1. Open the server ``instantRst -f readme.rst``
 2. From another terminal, open the file with vim ``vim readme.rst``
 3. Type in vim: ``InstantRst!``
