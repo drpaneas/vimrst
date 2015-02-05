@@ -30,8 +30,10 @@ in very simple way.
 1. Requirements
 
 .. code-block:: bash
+
    zypper install  python-devel curl
    sudo pip install https://github.com/Rykka/instant-rst.py/archive/master.zip
+
 
 2. Installation
 
