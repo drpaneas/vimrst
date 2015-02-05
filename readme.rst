@@ -46,6 +46,8 @@ in very simple way.
    Type: ``curl http://bit.ly/1DCKEn6 -L -o - | sh``
 
 
+   2.2 Manual Installation
+
 ..  code-block:: bash
 
    git clone https://github.com/drpaneas/vimrst.git
