@@ -16,7 +16,7 @@ Here's a list of plugins we are going to install and configure
 2. RIV - https://github.com/Rykka/riv.vim
 3. InstantRST - https://github.com/Rykka/InstantRst
 4. InstantRST Server - https://github.com/rykka/instant-rst.py
-5. Rhythm.css - https://github.com/Rykka/rhythm.css
+5. Rhythm css - https://github.com/Rykka/rhythm.css
 
 Also, we are going to use put some magic in ``.vimrc`` file
 by following the guideliens of
@@ -33,14 +33,11 @@ in very simple way.
 
    git clone https://github.com/drpaneas/vimrst.git ~
    cd vimrst
-   cp -r .vim $HOME && cp .vimrc $HOME
-
-2. Download the following
-
-.. code-block:: bash
-
+   cp .vimrc $HOME
+   git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
    zypper install  python-devel curl
    sudo pip install https://github.com/Rykka/instant-rst.py/archive/master.zip
+   vim +PluginInstall +qall
 
 
 How to use it
