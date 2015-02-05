@@ -27,7 +27,13 @@ Download my configuration
 I use Vundle as the tool that helps me to install all the plugins I need
 in very simple way.
 
-1. Installation
+1. Requirements
+
+.. code-block:: bash
+   zypper install  python-devel curl
+   sudo pip install https://github.com/Rykka/instant-rst.py/archive/master.zip
+
+2. Installation
 
 .. code-block:: bash
 
@@ -35,8 +41,8 @@ in very simple way.
    cd vimrst
    cp .vimrc $HOME
    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-   zypper install  python-devel curl
-   sudo pip install https://github.com/Rykka/instant-rst.py/archive/master.zip
+   mkdir -p ~/.vim/colors && cd ~/.vim/colors
+   wget -O wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
    vim +PluginInstall +qall
 
 
