@@ -251,7 +251,61 @@ you have to do is to decide in what format you want to save your file as.
 
 NERDTree Plugin
 ~~~~~~~~~~~~~~~
-Enable it by typing: `ctrl+f` or ``:NERDTreeToggle``
+Enable it by typing: `ctrl+f` or ``:NERDTreeToggle`` or just ``:NERDTree``.
+Once it has been enabled thenm you will see the directory structure of your
+computer in the left of the terminal. To disable it, type `q`.
+
++ **Toggle NERDTree**
+  + Open  : ``ctrl+f``
+  + Close : ``q``
+
++ **Edit Files**
+  + Open the file in the right window : ``o`` or preview ``go``
+  + Open the file by splitting the window vertically: ``s`` or preview ``gs``
+  + Open the file by splitting the window horizontally: ``i`` or preview ``gi``
+  + Open the file in a new tab and go to that tab: ``t``
+  + Open the file in a new tab, but don't go there yet: ``T``
+
+Speaking of splitting and tabbing, I have made special configuration based on
+PyCon 2012 Talk. All the changes are into the `~/.vimrc` file.
+
+**Split Navigation**
++ Hold down ``ctrl`` and press repeatidly ``w``. As a result, your cursor will
+  move from one split screen to another. It doesn't matter if you have 2
+  splitted screens or more. Well, if you have just 2, then each quite handy.
+  For example, this is how I switch between the `NERDTree` and the open file on
+  the right.
+
+  Otherwise, if you have splitted your screen on 4 or 6 parts, feel free to use
+  the standard VIM navigation:
+  + ``ctrl + w`` and ``h`` for left
+  + ``ctrl + w`` and ``l`` for right
+  + ``ctrl + w`` and ``j`` for down
+  + ``ctrl + w`` and ``k`` for up
+
+**Tab Navigation**
++ **Move to the Left Tab**: ``,`` + ``n``
++ **Move to the Right Tab**: ``,`` + ``m``
++ **Open new Tab on the right**: ``,`` + ``b``
++ **Close current Tab**: ``,`` + ``e`` or ``E``
++ **Save the current Tab**: ``ctrl`` + ``z``
+
++ **Bookmarks**
+ It's a neat feature, since you can quickly go to the folder you want. Some
+ bookmarks of mine would be the HOME directory and others which I usually have
+ my scripts or downloads or my git repositories. In order to create a bookmark, go to the folder you
+ want to book and type  ``:Bookmark <name-of-the-bookmark>``. Then, everytime
+ you want to see all your bookmark, just type: ``B``.
+
++ **Change Working Directory**
+  Sometimes, while I work on a particular repository I usually get lost among
+  other files I open in the process. So, instead of going again (and again)
+  back to same repo, I can simply *mark* it the `pwd`.
+
+  Go to the folder you want to mark as pwd and press ``cd``.
+  After that, change directory, go wherever you want and go back to your pwd by
+  just pressing ``C``.
+
 
 CtrlP Plugin
 ~~~~~~~~~~~~
