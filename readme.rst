@@ -26,12 +26,12 @@ Also, we are going to use put some magic in ``.vimrc`` file
 by following the guideliens of
 PuCon 2012 talk - https://github.com/mbrochh/vim-as-a-python-ide .
 
-Download my configuration
--------------------------
+Installation
+------------
 I use Vundle as the tool that helps me to install all the plugins I need
 in very simple way.
 
-1. Requirements
+1. **Requirements**
   
 .. code-block:: bash
 
@@ -39,7 +39,7 @@ in very simple way.
    sudo pip install https://github.com/Rykka/instant-rst.py/archive/master.zip
 
 
-2. Installation
+2. **Installation**
 
    Just copy and paste the following command in your terminal
    and it will do all the work for you. Just make sure you have
