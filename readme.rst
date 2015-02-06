@@ -47,6 +47,22 @@ in very simple way.
 
    Type: ``curl http://bit.ly/1DCKEn6 -L -o - | sh``
 
+
+Configuration
+-------------
+You can do all your configuration in ``~/.vimrc`` file
+
+Themes
+~~~~~~
+By default ``wombat256mod`` is enabled, which is a *dark* theme.
+If you prefer white background, go to ``~/.vimrc`` and change
+the from ``color wombat256mod`` to ``color proton``.
+
+More themes can be found at
+https://github.com/flazz/vim-colorschemes/tree/master/colors
+while you can put them into ``~/.vim/colors/`` folder and later
+enable them via your ``~/.vimrc`` file.
+
 Write and Preview on the fly
 ----------------------------
 
