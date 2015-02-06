@@ -142,18 +142,6 @@ you can browse (up ``k`` and down ``j``) using ``:RivHelpSection``.
 
 **View current document's sections**
 
-Like reading a PDF file, I I like to browse amongs sections using the left
-window. In order to appear the left window showing all sections, in which
-you can browse (up ``k`` and down ``j``) using ``:RivHelpSection``.
-
-
-+ **Table of Contents** = ``:RivCreateContent``
-
-+ **Literal-Block** = ``:RivCreateLiteralBlock``
-
-+ **Explicit-mark** = ``:RivCreateExplicitMark``
-
-
 Code Highlighting
 ~~~~~~~~~~~~~~~~~
 
