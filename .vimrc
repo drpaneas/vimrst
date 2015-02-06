@@ -115,6 +115,8 @@ Plugin 'gmarik/Vundle.vim'
 
 " plugin for RST syntax highlighting
 Plugin 'Rykka/riv.vim'
+let g:riv_fold_auto_update = 0
+set nofoldenable
 
 " plugin & settings for vim-powerline
  Plugin 'powerline/powerline'
