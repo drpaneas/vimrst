@@ -142,9 +142,20 @@ Code Highlighting
 ~~~~~~~~~~~~~~~~~
 
 For the ``code`` directives (also ``sourcecode`` and ``code-block``).
-Syntax highlighting of Specified languages are on ::
+Syntax highlighting of Specified languages are on
+
+*e.g.*
+
+``.. code:: bash``
+
+``#/bin/bash``
+
+``echo "The date is $(date)"``
+
+is going to be generated into:
+
 .. code:: bash
 
-    #!/bin/bash
-    echo "This is a $(opinion) thing"
+ #/bin/bash
+ echo "The date is $(date)"
 
