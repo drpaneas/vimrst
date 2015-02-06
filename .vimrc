@@ -1,17 +1,9 @@
-" Automatic reloading of .vimrc
-" So I don't have to reload the terminal every time I make changes in this file
-autocmd! bufwritepost .vimrc source %
-
 " Better copy & paste
 " When you want to paste large blocks of code into vim, go into ``INSERT`` mode
 " and press F2 before you paste.
 " At the bottom you should see ``-- INSERT (paste) --``.
 set pastetoggle=<F2>
 set clipboard=unnamed
-
-" Mouse and backspace
-set mouse=a " on OSX press ALT and click
-set bs=2 " make backspace behave like normal again
 
 " Rebind <Leader> key
 " I like to have it here becuase it is easier to reach than the default and
@@ -45,6 +37,7 @@ map <c-h> <c-w>h
 " easier moving between tabs
 map <Leader>n <esc>:tabprevious<CR>
 map <Leader>m <esc>:tabnext<CR>
+map <Leader>b <esc>:tabnew<CR>
 
 " map sort function to a key
 vnoremap <Leader>s :sort<CR>
@@ -134,45 +127,86 @@ Plugin 'Rykka/riv.vim'
  set wildignore+=*_build/*
  set wildignore+=*/coverage/*
 
-" plugin & settings for Jedi Python
- Plugin 'davidhalter/jedi-vim'
- let g:jedi#usages_command = "<leader>z"
- let g:jedi#popup_on_dot = 0
- let g:jedi#popup_select_first = 0
- map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
-
 " plugin for instant RST preview in browser
  Plugin 'Rykka/InstantRst'
 
-" Better navigating through omnicomplete option list
-" http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
- set completeopt=longest,menuone
- function! OmniPopup(action)
-    if pumvisible()
-         if a:action == 'j'
-             return "\<C-N>"
-         elseif a:action == 'k'
-             return "\<C-P>"
-         endif
-     endif
-     return a:action
- endfunction
+" plugin for NerdTree
+Plugin 'scrooloose/nerdtree'
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+map <C-e> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
- inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
- inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
+" plugin for auto tab
+Plugin 'godlygeek/tabular'
+" learn how to use it http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
+" documentation http://raw.github.com/godlygeek/tabular/master/doc/Tabular.txt
+
+" plugin for autocompletion
+Plugin 'Shougo/neocomplcache.vim'
+"Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplcache.
+let g:neocomplcache_enable_at_startup = 1
+" Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+" Define dictionary.
+let g:neocomplcache_dictionary_filetype_lists = {
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'scheme' : $HOME.'/.gosh_completions'
+        \ }
+
+" Define keyword.
+if !exists('g:neocomplcache_keyword_patterns')
+    let g:neocomplcache_keyword_patterns = {}
+endif
+let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplcache#undo_completion()
+inoremap <expr><C-l>     neocomplcache#complete_common_string()
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return neocomplcache#smart_close_popup() . "\<CR>"
+  " For no inserting <CR> key.
+  "return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplcache#close_popup()
+inoremap <expr><C-e>  neocomplcache#cancel_popup()
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Enable heavy omni completion.
+if !exists('g:neocomplcache_force_omni_patterns')
+  let g:neocomplcache_force_omni_patterns = {}
+endif
+let g:neocomplcache_force_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+let g:neocomplcache_force_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:neocomplcache_force_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+
+" For perlomni.vim setting.
+" https://github.com/c9s/perlomni.vim
+let g:neocomplcache_force_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+
 
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line

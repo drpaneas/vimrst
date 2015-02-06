@@ -71,6 +71,6 @@ Example
 0. Go to the folder of the project: ``cd vimrst``
 1. Open the server ``instantRst -f readme.rst``
 2. From another terminal, open the file with vim ``vim readme.rst``
-3. Type in vim: ``InstantRst!``
+3. Type ``InstantRst!``
 
 

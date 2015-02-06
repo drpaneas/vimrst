@@ -224,17 +224,6 @@ If you are working in a project.
 Riv
 ===
 
-Project
--------
-Put your documents in a project
-
-**Open main project's index file**
-
-``:RivProjectIndex`` or ``<C-E>ww`` to 
-
-**Show project list**
-
-``:RivProjectList`` or ``<C-E>wa``
 
 File
 ----
@@ -294,7 +283,7 @@ Help manage the document.
 
 + **Section Helper** = ``:RivHelpSection``
 
-+ **File Helper* = ``:RivHelpFile``
++ **File Helper** = ``:RivHelpFile``
 
 + **Todo Helper** = ``:RivHelpTodo``
 
@@ -311,7 +300,6 @@ To get a quick view of reStructuredText, use ``:RivPrimer``
 
 To view the detailed Riv instruction, use ``:RivInstruction``
 
-
 
 .. _Google: www.google.com
 .. _docutils: http://docutils.sourceforge.net/
