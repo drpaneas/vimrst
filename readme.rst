@@ -65,13 +65,13 @@ Example
 Publish
 ~~~~~~~
 
-+ `:Riv2HtmlFile` convert to html file. 
-+ `:Riv2HtmlAndBrowse` convert to html file and browse. Default is ‘firefox’ 
-+ `:Riv2Odt` convert to odt file and browse by ft browser 
-+ `:Riv2Xml` convert to xml file and browse by web browser 
-+ `:Riv2S5` convert to s5 file and browse by web browser 
-+ `:Riv2Latex` convert to latex file and edit in vim 
-+ `:Riv2Pdf` convert to latex file and then convert to pdf file.
++ ``:Riv2HtmlFile`` convert to html file. 
++ ``:Riv2HtmlAndBrowse`` convert to html file and browse. Default is ‘firefox’ 
++ ``:Riv2Odt`` convert to odt file and browse by ft browser 
++ ``:Riv2Xml`` convert to xml file and browse by web browser 
++ ``:Riv2S5`` convert to s5 file and browse by web browser 
++ ``:Riv2Latex`` convert to latex file and edit in vim 
++ ``:Riv2Pdf`` convert to latex file and then convert to pdf file.
 
 Basic RST
 ~~~~~~~~~
