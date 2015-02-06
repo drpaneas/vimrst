@@ -4,7 +4,7 @@ RST Quick Start Tutorial
 
 :Authors: Panos Georgiadis
 
-:Version: 1.0 of 2015-02-06
+:Version: 1.1 of 2015-02-07
 
 
 Overview
@@ -31,7 +31,7 @@ Installation
 I use **Vundle** as the tool that helps me to install all the plugins I need
 in a very simple way.
 
-1. **Requirements SLE-12**
+1a. **Requirements for SLE-12**
 
 .. code-block:: bash
 
@@ -40,6 +40,13 @@ in a very simple way.
 
 :Tip: I would be better if you create a *virtualenv* rather than installing
       pip stuff globally.
+
+1b. **Requirements for Ubuntu 12.04 or later**
+
+.. code-block:: bash
+
+   sudo apt-get install vim python-dev curl git python-pip python-docutils
+   sudo pip install instant-rst
 
 2. **Installation**
 
