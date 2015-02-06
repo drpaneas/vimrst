@@ -117,6 +117,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'Rykka/riv.vim'
 let g:riv_fold_auto_update = 0
 set nofoldenable
+let g:riv_global_leader = '<C-e>'
 
 " plugin & settings for vim-powerline
  Plugin 'powerline/powerline'
@@ -136,7 +137,7 @@ set nofoldenable
 Plugin 'scrooloose/nerdtree'
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-map <C-e> :NERDTreeToggle<CR>
+map <C-f> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " plugin for auto tab
